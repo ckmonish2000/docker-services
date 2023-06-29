@@ -54,4 +54,16 @@ export class UsersController {
   remove(@Param('uid', new ParseUUIDPipe()) uid: string): Promise<void> {
     return this.usersService.remove(uid);
   }
+
+  @Put(':uid')
+  @ApiResponse({
+    status: 200,
+    description: 'The user has been successfully updated.',
+  })
+  update(
+    @Param('uid', new ParseUUIDPipe()) uid: string,
+    @Body() updateUserDto: UpdateUserDto,
+  ) {
+    return this.usersService.update(uid, updateUserDto);
+  }
 }
