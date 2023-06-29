@@ -1,11 +1,12 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ProductsModule } from './products/products.module';
+import { PrometheusModule } from '@willsoto/nestjs-prometheus';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot({
-      type: "postgres",
+      type: 'postgres',
       host: process.env.HOST,
       port: 5432,
       username: process.env.USERNAME,
@@ -15,6 +16,7 @@ import { ProductsModule } from './products/products.module';
       synchronize: true,
     }),
     ProductsModule,
+    PrometheusModule.register(),
   ],
 })
 export class AppModule {}
