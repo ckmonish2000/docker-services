@@ -1,0 +1,34 @@
+FROM node:16.18.1-alpine as base
+WORKDIR /usr/src/app
+COPY package*.json .
+
+# development stage
+FROM base as dev
+
+RUN --mount=type=cache,target=/usr/src/app/.npm \
+    npm set cache /usr/src/app/.npm && \
+    npm install
+
+COPY . .
+
+EXPOSE 3000
+
+RUN npm run build
+
+# production stage
+FROM base as prod
+
+ARG NODE_ENV=production
+ENV NODE_ENV=${NODE_ENV}
+
+RUN --mount=type=cache,target=/usr/src/app/.npm \
+    npm set cache /usr/src/app/.npm && \
+    npm install --only=production
+
+COPY . .
+
+COPY --from=dev /usr/src/app/dist ./dist
+
+EXPOSE 3000
+
+CMD ["node", "dist/main"]
