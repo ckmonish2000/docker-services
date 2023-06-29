@@ -20,6 +20,13 @@ const oneUser = {
   lastName: 'lastName #1',
 };
 
+const oneUserUpdate = {
+  firstName: 'firstName #1',
+  lastName: 'lastName #',
+  isActive: false,
+  uid: '1',
+};
+
 describe('UserService', () => {
   let service: UsersService;
   let repository: Repository<User>;
@@ -36,6 +43,7 @@ describe('UserService', () => {
             save: jest.fn().mockResolvedValue(oneUser),
             remove: jest.fn(),
             delete: jest.fn(),
+            update: jest.fn().mockResolvedValue(oneUserUpdate),
           },
         },
       ],
@@ -75,8 +83,8 @@ describe('UserService', () => {
   describe('findOne()', () => {
     it('should get a single user', () => {
       const repoSpy = jest.spyOn(repository, 'findOneBy');
-      expect(service.findOne(1)).resolves.toEqual(oneUser);
-      expect(repoSpy).toBeCalledWith({ id: 1 });
+      expect(service.findOne('1')).resolves.toEqual(oneUser);
+      expect(repoSpy).toBeCalledWith({ uid: '1' });
     });
   });
 
@@ -86,6 +94,24 @@ describe('UserService', () => {
       const retVal = await service.remove('2');
       expect(removeSpy).toBeCalledWith('2');
       expect(retVal).toBeUndefined();
+    });
+  });
+
+  describe('update()', () => {
+    it('should successfully update the user', async () => {
+      const updateSpy = jest.spyOn(repository, 'update');
+      const findOneBy = jest.spyOn(repository, 'findOneBy');
+
+      findOneBy.mockResolvedValue(oneUserUpdate);
+
+      const payload = {
+        lastName: 'lastName #',
+        isActive: false,
+      };
+      const retValue = await service.update('1', payload);
+
+      expect(updateSpy).toBeCalledWith('1', payload);
+      expect(retValue).toEqual(oneUserUpdate);
     });
   });
 });
