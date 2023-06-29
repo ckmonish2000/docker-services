@@ -1,0 +1,23 @@
+version: '3.9'
+services:
+  db:
+    image: postgres:15.1-alpine
+    container_name: infra-db
+    restart: unless-stopped
+    env_file:
+      - ../Setup.env
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - infra
+    ports:
+      - 5432:5432
+
+volumes:
+  pgdata:
+
+
+networks:
+  infra:
+
+

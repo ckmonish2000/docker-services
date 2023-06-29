@@ -1,4 +1,22 @@
 **/node_modules
 **/dist
 **/.npm
-.vscode
+
+
+# Logs
+**/logs
+*.log
+**/npm-debug.log*
+
+# Tests
+**/coverage
+**/.nyc_output
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+
