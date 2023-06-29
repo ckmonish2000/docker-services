@@ -1,0 +1,11 @@
+:4000 {
+	reverse_proxy users-service:3000
+}
+
+:5000 {
+	reverse_proxy orders-service:3100
+}
+
+:6000 {
+	reverse_proxy products-service:3200
+}
