@@ -23,6 +23,55 @@ services:
       - 3000:3000
       - 9229:9229
 
+  orders-service:
+    container_name: nestjs_orders_service
+    image: nestjs-orders-service:0.1.0
+    init: true
+    build:
+      context: ../orders
+      dockerfile: ./dockerfile
+      target: dev
+    restart: unless-stopped
+    env_file:
+      - ../Setup.env
+    command: npm run start:dev
+    depends_on:
+      - db
+      - users-service
+    volumes:
+      - ../orders:/usr/src/app
+      - /usr/src/app/node_modules
+    networks:
+      - infra
+    ports:
+      - 3100:3100
+      # - 9229:9229
+
+  products-service:
+    container_name: nestjs_products_service
+    image: nestjs-products-service:0.1.0
+    init: true
+    build:
+      context: ../products
+      dockerfile: ./dockerfile
+      target: dev
+    restart: unless-stopped
+    env_file:
+      - ../Setup.env
+    command: npm run start:dev
+    depends_on:
+      - db
+      - users-service
+      - orders-service
+    volumes:
+      - ../products:/usr/src/app
+      - /usr/src/app/node_modules
+    networks:
+      - infra
+    ports:
+      - 3200:3200
+      # - 9229:9229
+
   db:
     image: postgres:15.1-alpine
     container_name: infra-db
