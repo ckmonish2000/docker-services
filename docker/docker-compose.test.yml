@@ -1,0 +1,27 @@
+services:
+  users-service:
+    container_name: nestjs_user_test
+    restart: no
+    command: npm run test
+    ports: []
+    depends_on: []
+    build:
+      target: dev
+
+  orders-service:
+    container_name: nestjs_orders_test
+    restart: no
+    command: npm run test
+    ports: []
+    depends_on: []
+    build:
+      target: dev
+
+  products-service:
+    container_name: nestjs_products_test
+    restart: no
+    command: npm run test
+    ports: []
+    depends_on: []
+    build:
+      target: dev

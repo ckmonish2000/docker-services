@@ -1,0 +1,13 @@
+services:
+  users-service:
+    build:
+      target: prod
+    command: []
+  orders-service:
+    build:
+      target: prod
+    command: []
+  products-service:
+    build:
+      target: prod
+    command: []
