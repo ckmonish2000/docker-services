@@ -9,11 +9,11 @@ export class OrdersService {
   constructor(
     @InjectRepository(Orders)
     private readonly ordersRepository: Repository<Orders>,
-  ) {}
+  ) { }
 
   create(createOrderDto: CreateOrderDto): Promise<Orders> {
     const orders = new Orders();
-    orders.orderID = 'fnknkvvdv';
+    orders.orderID = createOrderDto.orderID;
     orders.isCancelled = createOrderDto.isCancelled;
 
     return this.ordersRepository.save(orders);
@@ -30,4 +30,6 @@ export class OrdersService {
   async remove(orderID: string): Promise<void> {
     await this.ordersRepository.delete(orderID);
   }
+
+  
 }
