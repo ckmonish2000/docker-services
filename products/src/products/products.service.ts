@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CreateProductDto } from './dto/create-product.dto';
 import { Product } from './product.entity';
+import { UpdateProductDto } from './dto/update-product.dto';
 
 @Injectable()
 export class ProductsService {
@@ -28,5 +29,13 @@ export class ProductsService {
 
   async remove(productID: string): Promise<void> {
     await this.productRepository.delete(productID);
+  }
+
+  async update(
+    productID: string,
+    updateProductDto: UpdateProductDto,
+  ): Promise<Product> {
+    await this.productRepository.update(productID, updateProductDto);
+    return this.productRepository.findOneBy({ productID: productID });
   }
 }

@@ -1,18 +1,18 @@
-import { IsOptional, IsNotEmpty, Length } from 'class-validator';
+import { IsOptional, Length } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
-export class CreateProductDto {
+export class UpdateProductDto {
   @ApiProperty({
     description: 'name of the product',
     default: 'CD',
   })
   @Length(2, 50)
-  @IsNotEmpty({ message: 'Product should have a name' })
-  productName: string;
+  @IsOptional()
+  productName?: string;
 
   @ApiProperty({
     description: 'no.of product',
-    default: 10,
+    default: 5,
   })
   @IsOptional()
   quantity?: number;
