@@ -19,4 +19,4 @@ import { PrometheusModule } from '@willsoto/nestjs-prometheus';
     PrometheusModule.register(),
   ],
 })
-export class AppModule { }
+export class AppModule {}
