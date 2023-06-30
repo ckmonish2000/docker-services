@@ -1,0 +1,1137 @@
+{
+	"info": {
+		"_postman_id": "e96ac4b9-ce4d-4d89-828a-f72645a3ec99",
+		"name": "docker-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8801365"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "All Users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"user\",\r\n    \"lastName\":\"one\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{user-url}}/user/",
+							"host": [
+								"{{user-url}}"
+							],
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{user-url}}/user/",
+									"host": [
+										"{{user-url}}"
+									],
+									"path": [
+										"user",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "2"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 Jun 2023 04:22:25 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\""
+								},
+								{
+									"key": "Server",
+									"value": "Caddy"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								}
+							],
+							"cookie": [],
+							"body": "[]"
+						}
+					]
+				},
+				{
+					"name": "Add User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"user\",\r\n    \"lastName\":\"one\",\r\n    \"isActive\":false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{user-url}}/user/",
+							"host": [
+								"{{user-url}}"
+							],
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\":\"user\",\r\n    \"lastName\":\"one\",\r\n    \"isActive\":false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{user-url}}/user/",
+									"host": [
+										"{{user-url}}"
+									],
+									"path": [
+										"user",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "98"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 Jun 2023 04:25:17 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"62-cSCN5MPZdnjyZ8DWknWhdHvculo\""
+								},
+								{
+									"key": "Server",
+									"value": "Caddy"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"firstName\": \"user\",\n    \"lastName\": \"one\",\n    \"uid\": \"3ba326b2-de8a-4558-8550-189997a076b6\",\n    \"isActive\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "Remove User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{user-url}}/user/4ec942c6-b706-4198-8a30-377bf4af4456/",
+							"host": [
+								"{{user-url}}"
+							],
+							"path": [
+								"user",
+								"4ec942c6-b706-4198-8a30-377bf4af4456",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{user-url}}/user/4ec942c6-b706-4198-8a30-377bf4af4456/",
+									"host": [
+										"{{user-url}}"
+									],
+									"path": [
+										"user",
+										"4ec942c6-b706-4198-8a30-377bf4af4456",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 Jun 2023 04:26:11 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Caddy"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{user-url}}/user/a8f898df-7ea9-4ba8-a228-9cc4fc58f0ee",
+							"host": [
+								"{{user-url}}"
+							],
+							"path": [
+								"user",
+								"a8f898df-7ea9-4ba8-a228-9cc4fc58f0ee"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{user-url}}/user/a8f898df-7ea9-4ba8-a228-9cc4fc58f0ee",
+									"host": [
+										"{{user-url}}"
+									],
+									"path": [
+										"user",
+										"a8f898df-7ea9-4ba8-a228-9cc4fc58f0ee"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "98"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 Jun 2023 04:27:24 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"62-EQ9cRhcAWjZhg4naTUmevjxs8n8\""
+								},
+								{
+									"key": "Server",
+									"value": "Caddy"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"uid\": \"a8f898df-7ea9-4ba8-a228-9cc4fc58f0ee\",\n    \"firstName\": \"user\",\n    \"lastName\": \"one\",\n    \"isActive\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isActive\":false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{user-url}}/user/3ba326b2-de8a-4558-8550-189997a076b6",
+							"host": [
+								"{{user-url}}"
+							],
+							"path": [
+								"user",
+								"3ba326b2-de8a-4558-8550-189997a076b6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"isActive\":false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{user-url}}/user/3ba326b2-de8a-4558-8550-189997a076b6",
+									"host": [
+										"{{user-url}}"
+									],
+									"path": [
+										"user",
+										"3ba326b2-de8a-4558-8550-189997a076b6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "99"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 Jun 2023 04:35:00 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"63-hElZx1TdIeaO65VLWkjglGeTyMc\""
+								},
+								{
+									"key": "Server",
+									"value": "Caddy"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"uid\": \"3ba326b2-de8a-4558-8550-189997a076b6\",\n    \"firstName\": \"user\",\n    \"lastName\": \"one\",\n    \"isActive\": false\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "orders",
+			"item": [
+				{
+					"name": "All Orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{orders-url}}/orders/",
+							"host": [
+								"{{orders-url}}"
+							],
+							"path": [
+								"orders",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{orders-url}}/orders/",
+									"host": [
+										"{{orders-url}}"
+									],
+									"path": [
+										"orders",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "2"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 Jun 2023 04:29:35 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\""
+								},
+								{
+									"key": "Server",
+									"value": "Caddy"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								}
+							],
+							"cookie": [],
+							"body": "[]"
+						}
+					]
+				},
+				{
+					"name": "Add Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderID\": \"2ef09c97-be76-42b1-8f16-e135ca77b854\",\r\n    \"isCancelled\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{orders-url}}/orders/",
+							"host": [
+								"{{orders-url}}"
+							],
+							"path": [
+								"orders",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"orderID\": \"2ef09c97-be76-42b1-8f16-e135ca77b854\",\r\n    \"isCancelled\": false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{orders-url}}/orders/",
+									"host": [
+										"{{orders-url}}"
+									],
+									"path": [
+										"orders",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "70"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 Jun 2023 04:30:38 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"46-ia0EUjmixgqQgy/tf+ljBKDYo7I\""
+								},
+								{
+									"key": "Server",
+									"value": "Caddy"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"orderID\": \"2ef09c97-be76-42b1-8f16-e135ca77b854\",\n    \"isCancelled\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "Order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{orders-url}}/orders/2ef09c97-be76-42b1-8f16-e135ca77b854",
+							"host": [
+								"{{orders-url}}"
+							],
+							"path": [
+								"orders",
+								"2ef09c97-be76-42b1-8f16-e135ca77b854"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{orders-url}}/orders/2ef09c97-be76-42b1-8f16-e135ca77b854",
+									"host": [
+										"{{orders-url}}"
+									],
+									"path": [
+										"orders",
+										"2ef09c97-be76-42b1-8f16-e135ca77b854"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "70"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 Jun 2023 04:31:45 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"46-ia0EUjmixgqQgy/tf+ljBKDYo7I\""
+								},
+								{
+									"key": "Server",
+									"value": "Caddy"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"orderID\": \"2ef09c97-be76-42b1-8f16-e135ca77b854\",\n    \"isCancelled\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Order",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isCancelled\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{orders-url}}/orders/2ef09c97-be76-42b1-8f16-e135ca77b854",
+							"host": [
+								"{{orders-url}}"
+							],
+							"path": [
+								"orders",
+								"2ef09c97-be76-42b1-8f16-e135ca77b854"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"isCancelled\":true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{orders-url}}/orders/2ef09c97-be76-42b1-8f16-e135ca77b854",
+									"host": [
+										"{{orders-url}}"
+									],
+									"path": [
+										"orders",
+										"2ef09c97-be76-42b1-8f16-e135ca77b854"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "69"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 Jun 2023 04:32:44 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"45-RGEyKC4U99vD7777GB+vA6uAQY8\""
+								},
+								{
+									"key": "Server",
+									"value": "Caddy"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"orderID\": \"2ef09c97-be76-42b1-8f16-e135ca77b854\",\n    \"isCancelled\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "Remove Order",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{orders-url}}/orders/2ef09c97-be76-42b1-8f16-e135ca77b854",
+							"host": [
+								"{{orders-url}}"
+							],
+							"path": [
+								"orders",
+								"2ef09c97-be76-42b1-8f16-e135ca77b854"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{orders-url}}/orders/2ef09c97-be76-42b1-8f16-e135ca77b854",
+									"host": [
+										"{{orders-url}}"
+									],
+									"path": [
+										"orders",
+										"2ef09c97-be76-42b1-8f16-e135ca77b854"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 Jun 2023 04:33:41 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Caddy"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{products-url}}/products/c27c7d6d-558a-4d13-af4d-da8beee96704",
+							"host": [
+								"{{products-url}}"
+							],
+							"path": [
+								"products",
+								"c27c7d6d-558a-4d13-af4d-da8beee96704"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{products-url}}/products/c27c7d6d-558a-4d13-af4d-da8beee96704",
+									"host": [
+										"{{products-url}}"
+									],
+									"path": [
+										"products",
+										"c27c7d6d-558a-4d13-af4d-da8beee96704"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 Jun 2023 04:44:00 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Caddy"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productName\": \"cd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{products-url}}/products/c27c7d6d-558a-4d13-af4d-da8beee96704",
+							"host": [
+								"{{products-url}}"
+							],
+							"path": [
+								"products",
+								"c27c7d6d-558a-4d13-af4d-da8beee96704"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productName\": \"cd\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{products-url}}/products/c27c7d6d-558a-4d13-af4d-da8beee96704",
+									"host": [
+										"{{products-url}}"
+									],
+									"path": [
+										"products",
+										"c27c7d6d-558a-4d13-af4d-da8beee96704"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "85"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 Jun 2023 04:43:23 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"55-8OE4GFdjpCzbhRMTQQHNYXA8Ju8\""
+								},
+								{
+									"key": "Server",
+									"value": "Caddy"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"productID\": \"c27c7d6d-558a-4d13-af4d-da8beee96704\",\n    \"productName\": \"cd\",\n    \"quantity\": 10\n}"
+						}
+					]
+				},
+				{
+					"name": "Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{products-url}}/products/c27c7d6d-558a-4d13-af4d-da8beee96704",
+							"host": [
+								"{{products-url}}"
+							],
+							"path": [
+								"products",
+								"c27c7d6d-558a-4d13-af4d-da8beee96704"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{products-url}}/products/c27c7d6d-558a-4d13-af4d-da8beee96704",
+									"host": [
+										"{{products-url}}"
+									],
+									"path": [
+										"products",
+										"c27c7d6d-558a-4d13-af4d-da8beee96704"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "86"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 Jun 2023 04:42:28 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"56-VWZAUkhtCU9tOoaIJtPISfyqJvU\""
+								},
+								{
+									"key": "Server",
+									"value": "Caddy"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"productID\": \"c27c7d6d-558a-4d13-af4d-da8beee96704\",\n    \"productName\": \"dvd\",\n    \"quantity\": 10\n}"
+						}
+					]
+				},
+				{
+					"name": "All Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{products-url}}/products/",
+							"host": [
+								"{{products-url}}"
+							],
+							"path": [
+								"products",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{products-url}}/products/",
+									"host": [
+										"{{products-url}}"
+									],
+									"path": [
+										"products",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "88"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 Jun 2023 04:41:47 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"58-PhTKzfoHOyvygyUYewbQ7UzcGqM\""
+								},
+								{
+									"key": "Server",
+									"value": "Caddy"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"productID\": \"c27c7d6d-558a-4d13-af4d-da8beee96704\",\n        \"productName\": \"dvd\",\n        \"quantity\": 10\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Add Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productName\":\"dvd\",\r\n    \"quantity\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{products-url}}/products/",
+							"host": [
+								"{{products-url}}"
+							],
+							"path": [
+								"products",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productName\":\"dvd\",\r\n    \"quantity\":10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{products-url}}/products/",
+									"host": [
+										"{{products-url}}"
+									],
+									"path": [
+										"products",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "86"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 Jun 2023 04:41:12 GMT"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"56-sRpiQiZxSLFsPUOfIdZpPPEJ20Q\""
+								},
+								{
+									"key": "Server",
+									"value": "Caddy"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"productName\": \"dvd\",\n    \"quantity\": 10,\n    \"productID\": \"c27c7d6d-558a-4d13-af4d-da8beee96704\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
