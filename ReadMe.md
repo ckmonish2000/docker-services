@@ -70,3 +70,59 @@ HOST=localhost
 ```
 npm run start:dev
 ```
+
+## Running with docker 
+
+To run the application using Docker, follow these steps:
+
+- Make sure you have Docker installed and running on your machine.
+
+- To run the application in development mode:
+```
+cd project-directory
+cd docker
+docker-compose -f .\docker-compose.dev.yml up
+```
+
+- To run the application in production mode:
+```
+cd project-directory
+cd docker
+docker-compose -f .\docker-compose.dev.yml -f .\docker-compose.prod.yml up
+```
+
+- The service should be running inside Docker container you can access each service from the proxy ports mentioned above.
+
+## Testing
+
+In order to run the automation tests run the following command:
+```
+docker-compose -f .\docker-compose.dev.yml -f .\docker-compose.test.yml up docker-service-name 
+```
+
+[**Note**: Try running individual tests for each service as if you do not have sufficient memory the process will exit with exit_code 0 ]
+
+## API Documentation
+
+- You can access each service from either the default or proxy port depending on how you're running the application.
+- You can access the Swagger API documentation for each service by visiting `/api/` endpoint.
+
+- For example:
+```
+Visit: http://localhost:4000/api/
+```
+
+[**Note**: you can also use the postman file provided in the root directory.]
+
+## Metrics
+
+- You can access each service from either the default or proxy port depending on how you're running the application.
+
+- Each service exposes default metrics at the endpoint `/metrics/`.
+- For Example:
+```
+Visit: http://localhost:4000/metrics/
+```
+[**Note**: You can use this endpoint to configure Prometheus.]
+
+
